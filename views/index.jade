@@ -33,19 +33,35 @@ html
 							else
 								a(href='/auth/facebook') Login
 
-		.container
-			.starter-template
-				h1 Edit Test
-				p.lead
-					| test each of the&nbsp;
-					a(href='http://bit.ly/181yG5r') Bootstrap 3 version of the sample templates&nbsp;
-					| by clicking on the links below
+		.container(ng-app="myApp")
+			.starter-template(ng-controller="MainController")
 
+				div.well
+					h1 Weather
+					table.geolocation-table
+						tbody
+							tr
+								td Station
+								td {{weather.name}}
+							tr
+								td Conditions
+								td {{weather.weather[0].main}} - {{weather.weather[0].description}}
+							tr
+								td Temperature
+								td {{weather.main.temp}}°
+							tr
+								td Wind
+								td {{weather.wind.speed}} mph {{weather.wind.deg | windDirection}}
+							tr
+								td Sunrise
+								td {{weather.sys.sunrise * 1000| date:'h:mm a'}}
+							tr
+								td Sunset
+								td {{weather.sys.sunset * 1000| date:'h:mm a'}}
+							tr
+								td Last Update
+								td {{weather.dt * 1000| date:'h:mm a'}}
 
-			div(ng-app="myApp")
-				div(ng-controller="MainController")
-					div.well(ng-repeat="item in list")
-						h1 {{item.name}}
 
 
 		script(src='/libs/jquery.min.js')
