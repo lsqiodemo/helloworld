@@ -10,7 +10,7 @@
 	exports.run = function(options){
 		db = options.db;
 		events();
-	}
+	};
 
 	exports.indexRoutes = ["/posts","/create"];
 
@@ -28,7 +28,7 @@
 				db.read("item",{"group":"blog"},{limit:20,sort:"-date"},function(error,posts){
 					json.posts = posts;
 					sendPage();
-				})
+				});
 				break;
 			case "/create":
 				view = "create";
@@ -40,17 +40,14 @@
 			break;
 		}
 
-
-		
 		function sendPage(){
 			if(!_.isObject(session.p)) return callback(_.defaults(json,{"loggedIn":false}),view);
-
 			db.read("profile",{"_id":session.p},{one:true},function(e,d){
 				callback(_.defaults(json,{ "loggedIn":true, user:d }),view);
 			})			
 		}
 		
-	}
+	};
 	
 	exports.routes = function(app){
 	
@@ -59,7 +56,7 @@
 			users.login(req.session,function(json){
 				res.send(json)
 			})
-		})
+		});
 
 		app.post("/post/new",function(req,res){
 			if(!_.has(req.session,"p")) return res.redirect("/")
@@ -81,7 +78,7 @@
 					res.redirect("/posts")
 				})
 			})
-		})
+		});
 
 		app.get("/post/delete/:id",function(req,res){
 			if(!_.has(req.session,"p")) return res.redirect("/")
