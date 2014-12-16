@@ -39,7 +39,7 @@ html
 				h1 Weather
 
 				div.well
-					form.form-horizontal
+					form
 						div.input-group
 							span.input-group-addon City
 							input.form-control(type="text", ng-model="city")
@@ -52,8 +52,9 @@ html
 
 				div.loader(ng-show="showLoader")
 
-				div.well(ng-show="weather")
-					p {{weather.item.title}}
+				div.well(ng-show="!showLoader")
+					h4 {{weather.item.title}}
+
 					table.weather-table
 						tbody
 							tr
