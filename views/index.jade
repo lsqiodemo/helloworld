@@ -41,6 +41,13 @@ html
 					a(href='http://bit.ly/181yG5r') Bootstrap 3 version of the sample templates&nbsp;
 					| by clicking on the links below
 
+
+			div(ng-app="myApp")
+				div(ng-controller="MainController")
+					div.well(ng-repeat="item in list")
+
+
 		script(src='/libs/jquery.min.js')
 		script(src='/libs/bootstrap.min.js')
 		script(src='/libs/angular.min.js')
+		script(src='/org/js/app.js')
