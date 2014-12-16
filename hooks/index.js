@@ -12,7 +12,7 @@
 		events();
 	};
 
-//	exports.indexRoutes = ["/weather"];
+	exports.indexRoutes = ["/weather"];
 
 	exports.pageData = function(page,session,callback,host,req,res){
 		var view = 'index';
@@ -53,50 +53,50 @@
 		
 	};
 	
-//	exports.routes = function(app){
-//
-//
-//		app.get("/api/v1/users",function(req,res){
-//			users.login(req.session,function(json){
-//				res.send(json)
-//			})
-//		});
-//
-//		app.post("/post/new",function(req,res){
-//			if(!_.has(req.session,"p")) return res.redirect("/")
-//			if(!req.body.title) return res.redirect("/create")
-//			if(!req.body.text) return res.redirect("/create")
-//
-//			var json = {};
-//			json.group = "blog";
-//			json.title = req.body.title;
-//			json.body = {};
-//			json.body.text = req.body.text;
-//			db.read("profile",{"_id":req.session.p},{one:true},function(e,d){
-//				json.body.author = {"_id":req.session.p
-//									,"title":d.title
-//									,"photo":d.photo};
-//				db.create("item",json,function(error,data){
-//					if(error)
-//						return res.redirect("/create")
-//					res.redirect("/posts")
-//				})
-//			})
-//		});
-//
-//		app.get("/post/delete/:id",function(req,res){
-//			if(!_.has(req.session,"p")) return res.redirect("/")
-//			db.delete("item",{"_id":req.params.id,"body.author._id":req.session.p},function(error,data){
-//				res.redirect("/posts")
-//			})
-//		})
-//
-//	return app;
-//	}
+	exports.routes = function(app){
 
-//  var events = function(){
-//
-//	}
+
+		app.get("/api/v1/users",function(req,res){
+			users.login(req.session,function(json){
+				res.send(json)
+			})
+		});
+
+		app.post("/post/new",function(req,res){
+			if(!_.has(req.session,"p")) return res.redirect("/")
+			if(!req.body.title) return res.redirect("/create")
+			if(!req.body.text) return res.redirect("/create")
+
+			var json = {};
+			json.group = "blog";
+			json.title = req.body.title;
+			json.body = {};
+			json.body.text = req.body.text;
+			db.read("profile",{"_id":req.session.p},{one:true},function(e,d){
+				json.body.author = {"_id":req.session.p
+									,"title":d.title
+									,"photo":d.photo};
+				db.create("item",json,function(error,data){
+					if(error)
+						return res.redirect("/create")
+					res.redirect("/posts")
+				})
+			})
+		});
+
+		app.get("/post/delete/:id",function(req,res){
+			if(!_.has(req.session,"p")) return res.redirect("/")
+			db.delete("item",{"_id":req.params.id,"body.author._id":req.session.p},function(error,data){
+				res.redirect("/posts")
+			})
+		})
+
+	return app;
+	}
+
+  var events = function(){
+
+	}
 
 return exports;
 })(exports)
