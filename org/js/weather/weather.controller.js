@@ -1,4 +1,4 @@
-myAppModule
+angular.module("AngularTestApp")
   .controller('WeatherController', function($scope, $http) {
 
     $scope.showLoader = false;
