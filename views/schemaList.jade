@@ -6,11 +6,8 @@ html
 		title Bootstrap Blog Boilerplate
 		link(href='/less/bootstrap.css', rel='stylesheet')
 		link(href='/less/stylesheet.css', rel='stylesheet')
-
-	body(ng-app="myApp")
-
-		//nav
-		div.navbar.navbar-inverse.navbar-fixed-top
+	body
+		.navbar.navbar-inverse.navbar-fixed-top
 			.container
 				.navbar-header
 					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -19,29 +16,39 @@ html
 						span.icon-bar
 				.collapse.navbar-collapse
 					ul.nav.navbar-nav
-						li.active
-							a(href='#') Home
 						li
-							a(href='/posts') Blog Posts
+							a(href='/') Home
+						li.active
+							a(href='#') Blog Posts
 						if user
 							li
 								a(href='create') create
-						
+					
 					ul.nav.navbar-nav.navbar-right
 						li
 							if user
-								a(href='/auth/logout') 
-									| #{user.title}	
+								a(href='/auth/logout')
+									| #{user.title}
 									img(src="#{user.photo}")
 							else
 								a(href='/auth/facebook') Login
 
 		.container
-			div(ng-include="/angularTemplates/weather.jade")
+			.row
+				.col-lg-4.col
+					header
+						h1 #{post.title}
+						h2 #{prettyDate(post.date)}
+						span
+							img(style="background-image: url(#{post.body.author.photo});")
+						if user && post.body.author._id == user._id
+							a.delete(href="/post/delete/#{post._id}")
+								| X
 
+					article #{post.body.text}
+								
 
 		script(src='/libs/jquery.min.js')
 		script(src='/libs/bootstrap.min.js')
 		script(src='/libs/angular.min.js')
-		script(src='/js/weather/weather.controller.js')
 		script(src='/js/app.js')
