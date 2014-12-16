@@ -45,6 +45,7 @@ html
 			div(ng-app="myApp")
 				div(ng-controller="MainController")
 					div.well(ng-repeat="item in list")
+						h1 {{item.name}}
 
 
 		script(src='/libs/jquery.min.js')
