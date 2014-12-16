@@ -36,6 +36,19 @@ html
 		.container(ng-app="myApp")
 			.starter-template(ng-controller="MainController")
 
+
+				div.well
+
+					form.form-inline
+						div.input-group
+							label City
+							input.form-control(type="text", ng-model="city")
+						div.input-group
+							label State
+							input.form-control(type="text", ng-model="state")
+
+						button.button(ng-click="getWeather") Get Weather
+
 				div.well
 					h1 Weather
 					p {{weather.item.title}}
