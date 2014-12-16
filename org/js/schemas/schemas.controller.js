@@ -1,29 +1,16 @@
 angular.module("AngularTestApp")
-  .controller('ClientsController', function($scope, $http) {
+  .controller('ClientsController', function($scope, $http, lsqService) {
 
     $scope.showLoader = false;
-    $scope.clients = null;
+    $scope.schemas = null;
 
-    var config = {
-      headers: {
-        "Content-Type": "application/json"
-      }
-    };
-
-    var lsqObject = {
-      "token" : "IYFYstLbqGfJe8uyTDYn"
-      ,"request": "read"
-      ,"query": {}
-      ,"select":{}
-      ,"show":true
-    };
-
-    $scope.getClients = function(){
+    $scope.getSchemas = function(){
       $scope.showLoader = true;
-      $http.post('https://helloworld.lsq.io/api/v1/client', lsqObject, config)
+
+      lsqService.getCollection('schema')
         .then(function(result){
           $scope.showLoader = false;
-          $scope.clients = result.data.result;
+          $scope.schemas = result.data.result;
         });
     };
 

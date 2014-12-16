@@ -1,12 +1,12 @@
 
 <div ng-controller="SchemasController">
     <h1>Clients</h1>
-    <button class="btn btn-primary" ng-click="getClients()">Get Clients</button>
+    <button class="btn btn-primary" ng-click="getSchemas()">Get Clients</button>
 
 
     <div ng-show="showLoader" class="loader"></div>
 
-    <div class="well" ng-repeat="client in clients">
+    <div class="well" ng-repeat="schema in schemas">
 
         <table class="weather-table">
             <tbody>
