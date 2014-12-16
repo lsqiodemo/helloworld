@@ -1,0 +1,13 @@
+
+<div ng-controller="ClientsController">
+    <h1>Clients</h1>
+    <div ng-show="showLoader" class="loader"></div>
+
+    <div class="well">
+        <ul>
+            <li ng-repeat="client in clients">{{$index}}</li>
+        </ul>
+    </div>
+
+
+</div>
