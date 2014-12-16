@@ -16,8 +16,10 @@
             <button ng-click="getWeather()" class="btn btn-primary">Get Weather</button>
         </form>
     </div>
+
     <div ng-show="showLoader" class="loader"></div>
-    <div ng-show="!showLoader &amp;&amp; weather" class="well">
+
+    <div ng-show="!showLoader && weather" class="well">
         <h4>{{weather.item.title}}</h4>
         <table class="weather-table">
             <tbody>
