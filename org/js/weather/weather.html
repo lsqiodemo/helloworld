@@ -23,26 +23,26 @@
         <h4>{{weather.item.title}}</h4>
         <table class="weather-table">
             <tbody>
-            <tr>
-                <td>Conditions</td>
-                <td>{{weather.item.condition.text}}</td>
-            </tr>
-            <tr>
-                <td>Temperature</td>
-                <td>{{weather.item.condition.temp}}°</td>
-            </tr>
-            <tr>
-                <td>Wind</td>
-                <td>{{weather.wind.speed}} mph {{weather.wind.direction | windDirection}}</td>
-            </tr>
-            <tr>
-                <td>Station</td>
-                <td>{{weather.location.city}}, {{weather.location.region}}</td>
-            </tr>
-            <tr>
-                <td>Last Update</td>
-                <td>{{weather.lastBuildDate| date:'h:mm a'}}</td>
-            </tr>
+                <tr>
+                    <td>Conditions</td>
+                    <td>{{weather.item.condition.text}}</td>
+                </tr>
+                <tr>
+                    <td>Temperature</td>
+                    <td>{{weather.item.condition.temp}}°</td>
+                </tr>
+                <tr>
+                    <td>Wind</td>
+                    <td>{{weather.wind.speed}} mph {{weather.wind.direction | windDirection}}</td>
+                </tr>
+                <tr>
+                    <td>Station</td>
+                    <td>{{weather.location.city}}, {{weather.location.region}}</td>
+                </tr>
+                <tr>
+                    <td>Last Update</td>
+                    <td>{{weather.lastBuildDate| date:'h:mm a'}}</td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -1,13 +1,28 @@
 
 <div ng-controller="ClientsController">
     <h1>Clients</h1>
+    <button class="btn btn-primary" ng-click="getClients()">Get Clients</button>
     <div ng-show="showLoader" class="loader"></div>
 
-    <div class="well">
-        <button class="btn btn-primary" ng-click="getClients()"></button>
-        <ul>
-            <li ng-repeat="client in clients">IP: {{client.ip[0]}}</li>
-        </ul>
+    <div class="well" ng-repeat="client in clients">
+
+        <table class="weather-table">
+            <tbody>
+                <tr>
+                    <td>IP</td>
+                    <td>{{client.ip}}</td>
+                </tr>
+                <tr>
+                    <td>Last Update</td>
+                    <td>{{client.states.lastUpdate | date:'longDate'}}</td>
+                </tr>
+                <tr>
+                    <td>Expires</td>
+                    <td>{{client.expire | date:'longDate'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
 
 
