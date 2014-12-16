@@ -19,7 +19,7 @@
 
     <div ng-show="showLoader" class="loader"></div>
 
-    <div ng-show="!showLoader && weather" class="well">
+    <div ng-show="weather && !showLoader" class="well">
         <h4>{{weather.item.title}}</h4>
         <table class="weather-table">
             <tbody>
