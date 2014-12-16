@@ -19,70 +19,6 @@ body {
 }
 
 
-.posts{	
-	.col{
-		border: 1px solid #cccccc;
-		border-radius: 2px;
-		background-color: #fafafa;
-		margin: 10px;
-		padding-bottom: 15px; 
-
-		header{
-			.delete{
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
-			border-bottom: 1px solid #cccccc;
-			position: relative;
-			margin-bottom: 40px;
-			padding-bottom: 20px;
-			h1{
-				text-align: center;
-				font-size: 26px;
-			}
-			h2{
-				text-align: center;
-				color: #cccccc;
-				font-size: 23px;
-			}
-
-			span{
-				position: absolute;
-				.calcRight('((100% / 2) - 20px)', 30%);
-				
-				width: 40px;
-				height: 40px;
-				border: 1px solid #cccccc;
-				border-radius: 100px;
-				img{
-					width: 38px;
-					height: 38px;
-					border-radius: 100px;
-				}
-			}
-		}
-		article{
-
-		}
-		footer{
-			a{
-				border: 1px solid #cccccc;
-				padding: 3px;
-				margin-top: 10px;
-				display: inline-block;
-				color: #333333;
-				&:hover{
-					text-decoration: none;
-					background: #EDEDED;
-					color: #333333;
-				}
-
-			}
-		}
-	}	
-}
-
 .weather-table tr td:first-child {
   padding-right: 10px;
   text-align: right;
@@ -159,4 +95,14 @@ body {
   87.5% {
     box-shadow: 0em -3em 0em 0em #428bca, 2em -2em 0 -0.5em #428bca, 3em 0em 0 -0.5em #428bca, 2em 2em 0 -0.5em #428bca, 0em 3em 0 -0.5em #428bca, -2em 2em 0 0em #428bca, -3em 0em 0 0em #428bca, -2em -2em 0 0.2em #428bca;
   }
+}
+
+
+.viewAnimate.ng-enter {
+  transition: all 800ms cubic-bezier(0.230, 1.000, 0.320, 1.000); /* easeOutQuint */
+  opacity: 0;
+}
+
+.viewAnimate.ng-enter-active {
+  opacity: 1;
 }

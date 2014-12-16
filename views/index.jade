@@ -20,13 +20,10 @@ html
 						span.icon-bar
 				.collapse.navbar-collapse
 					ul.nav.navbar-nav
-						li.active
+						li
 							a(href='weather') Weather
 						li
 							a(href='clients') Clients
-						//if user
-						//	li
-						//		a(href='create') create
 
 					ul.nav.navbar-nav.navbar-right
 						li
@@ -38,7 +35,7 @@ html
 								a(href='/auth/facebook') Login
 
 		.container
-			div(ng-view)
+			div(ng-view, class="viewAnimate")
 
 
 		script(src='/libs/jquery.min.js')
