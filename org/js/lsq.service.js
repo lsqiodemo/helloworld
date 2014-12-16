@@ -22,6 +22,8 @@ angular.module('AngularTestApp')
 
     this.getCollection = function(collectionName){
 
+      this.lsqObject.request = "read";
+
       return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
 
     };
