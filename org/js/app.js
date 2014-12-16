@@ -4,7 +4,7 @@ angular.module('AngularTestApp', ['ngRoute', 'ngAnimate'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'js/weather/weather.html'
+        templateUrl: 'js/weather/clients.html'
       })
       .when('/clients', {
         templateUrl: 'js/clients/clients.html'
