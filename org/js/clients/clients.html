@@ -4,8 +4,9 @@
     <div ng-show="showLoader" class="loader"></div>
 
     <div class="well">
+        <button class="btn btn-primary" ng-click="getClients()"></button>
         <ul>
-            <li ng-repeat="client in clients">{{$index}}</li>
+            <li ng-repeat="client in clients">IP: {{client.ip[0]}}</li>
         </ul>
     </div>
 

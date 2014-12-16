@@ -5,17 +5,25 @@ angular.module("AngularTestApp")
     $scope.clients = null;
 
     var lsqObject = {
-      "token" : "123456"
-      ,"request" : "read"
+      "token" : "IYFYstLbqGfJe8uyTDYn"
+      ,"request": "read"
       ,"query": {}
+      ,"select":{}
+      ,"show":true
+    };
+
+    var config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
     };
 
     $scope.getClients = function(){
       $scope.showLoader = true;
-      $http.post('https://helloworld.lsq.io/api/v1/client', lsqObject)
+      $http.post('https://helloworld.lsq.io/api/v1/client', lsqObject, config)
         .then(function(result){
           $scope.showLoader = false;
-          $scope.clients = result.data;
+          $scope.clients = result.data.result;
         });
     };
 
