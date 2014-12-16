@@ -1,5 +1,5 @@
 angular.module("AngularTestApp")
-  .controller('ClientsController', function($scope, $http, lsqService) {
+  .controller('SchemasController', function($scope, $http, lsqService) {
 
     $scope.showLoader = false;
     $scope.schemas = null;
