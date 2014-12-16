@@ -40,12 +40,14 @@ html
 
 				div.well
 					form
-						div.input-group
-							span.input-group-addon City
-							input.form-control(type="text", ng-model="city")
-						div.input-group
-							span.input-group-addon State
-							input.form-control(type="text", ng-model="state")
+						.form-group
+							.input-group
+								span.input-group-addon City
+								input.form-control(type="text", ng-model="city")
+						.form-group
+							.input-group
+								span.input-group-addon State
+								input.form-control(type="text", ng-model="state")
 
 						button.btn.btn-primary(ng-click="getWeather()") Get Weather
 
