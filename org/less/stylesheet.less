@@ -97,3 +97,70 @@ body {
 .weather-table tr td:last-child {
   padding-left: 10px;
 }
+
+//Spinner
+.loader {
+  font-size: 20px;
+  margin: 5em auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em #5cb85c, 2em -2em 0 0em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 0em #5cb85c;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #5cb85c, 2em -2em 0 0.2em #5cb85c, 3em 0em 0 0em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 0em #5cb85c, 3em 0em 0 0.2em #5cb85c, 2em 2em 0 0em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 0em #5cb85c, 2em 2em 0 0.2em #5cb85c, 0em 3em 0 0em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 0em #5cb85c, 0em 3em 0 0.2em #5cb85c, -2em 2em 0 0em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 0em #5cb85c, -2em 2em 0 0.2em #5cb85c, -3em 0em 0 0em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 0em #5cb85c, -3em 0em 0 0.2em #5cb85c, -2em -2em 0 0em #5cb85c;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 0em #5cb85c, -3em 0em 0 0em #5cb85c, -2em -2em 0 0.2em #5cb85c;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em #5cb85c, 2em -2em 0 0em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 0em #5cb85c;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #5cb85c, 2em -2em 0 0.2em #5cb85c, 3em 0em 0 0em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 0em #5cb85c, 3em 0em 0 0.2em #5cb85c, 2em 2em 0 0em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 0em #5cb85c, 2em 2em 0 0.2em #5cb85c, 0em 3em 0 0em #5cb85c, -2em 2em 0 -0.5em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 0em #5cb85c, 0em 3em 0 0.2em #5cb85c, -2em 2em 0 0em #5cb85c, -3em 0em 0 -0.5em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 0em #5cb85c, -2em 2em 0 0.2em #5cb85c, -3em 0em 0 0em #5cb85c, -2em -2em 0 -0.5em #5cb85c;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 0em #5cb85c, -3em 0em 0 0.2em #5cb85c, -2em -2em 0 0em #5cb85c;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #5cb85c, 2em -2em 0 -0.5em #5cb85c, 3em 0em 0 -0.5em #5cb85c, 2em 2em 0 -0.5em #5cb85c, 0em 3em 0 -0.5em #5cb85c, -2em 2em 0 0em #5cb85c, -3em 0em 0 0em #5cb85c, -2em -2em 0 0.2em #5cb85c;
+  }
+}

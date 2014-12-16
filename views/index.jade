@@ -49,6 +49,9 @@ html
 
 						button.btn.btn-primary(ng-click="getWeather()") Get Weather
 
+
+				div.loader(ng-show="showLoader")
+
 				div.well(ng-show="weather")
 					p {{weather.item.title}}
 					table.weather-table
