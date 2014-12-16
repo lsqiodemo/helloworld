@@ -1,5 +1,5 @@
 // declare a module
-angular.module('AngularTestApp', ['ngRoute', 'ngAnimate'])
+angular.module('AngularTestApp', ['ngRoute'])
 
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
