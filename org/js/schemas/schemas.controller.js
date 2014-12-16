@@ -7,7 +7,7 @@ angular.module("AngularTestApp")
     $scope.getSchemas = function(){
       $scope.showLoader = true;
 
-      lsqService.getCollection('schema')
+      lsqService.getCollection('schemas')
         .then(function(result){
           $scope.showLoader = false;
           $scope.schemas = result.data.result;
