@@ -17,10 +17,9 @@
         </form>
     </div>
 
-    <div ng-show="showSpinner" class="loader">
-    </div>
+    <div ng-show="showSpinner" class="loader"></div>
 
-    <div ng-hide="!weather || showSpinner" class="well">
+    <div ng-show="weather && !showSpinner" class="well">
         <h4>{{weather.item.title}}</h4>
         <table class="weather-table">
             <tbody>
