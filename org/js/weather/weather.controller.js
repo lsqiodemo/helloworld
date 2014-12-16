@@ -1,8 +1,6 @@
 angular.module("AngularTestApp")
   .controller('WeatherController', function($scope, $http) {
 
-    $scope.showSpinner = false;
-    $scope.weather = null;
     $scope.city = "Boise";
     $scope.state = "ID";
 
