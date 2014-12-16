@@ -1,0 +1,34 @@
+
+
+
+<div ng-controller="EventsController">
+
+    <h1>Clients</h1>
+    <button class="btn btn-primary" ng-click="getEvents()">Get Clients</button>
+
+    <br>
+    <hr>
+
+    <div ng-show="showLoader" class="loader"></div>
+
+    <div class="well">
+
+        <table class="table-striped">
+            <tbody>
+            <tr>
+                <th>IP</th>
+                <th>Last updated</th>
+                <th>Expires</th>
+            </tr>
+            <tr ng-repeat="event in events">
+                <td>{{client.ip[0]}}</td>
+                <td>{{client.states.lastUpdated | date:'medium'}}</td>
+                <td>{{client.expire | date:'medium'}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>
