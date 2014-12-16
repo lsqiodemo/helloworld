@@ -7,7 +7,7 @@ angular.module("AngularTestApp")
     $scope.getEvents = function(){
       $scope.showLoader = true;
 
-      lsqService.getCollection('events')
+      lsqService.getCollection('event')
         .then(function(result){
           $scope.showLoader = false;
           $scope.events = result.data.result;
