@@ -38,29 +38,24 @@ html
 
 				div.well
 					h1 Weather
+						small {{weather.item.title}}
 					table.geolocation-table
 						tbody
 							tr
 								td Station
-								td {{weather.name}}
+								td {{weather.location.city}}, {{weather.location.region}}
 							tr
 								td Conditions
-								td {{weather.weather[0].main}} - {{weather.weather[0].description}}
+								td {{weather.item.condition.text}}
 							tr
 								td Temperature
-								td {{weather.main.temp}}°
+								td {{weather.item.condition.temp}}°
 							tr
 								td Wind
-								td {{weather.wind.speed}} mph {{weather.wind.deg | windDirection}}
-							tr
-								td Sunrise
-								td {{weather.sys.sunrise * 1000| date:'h:mm a'}}
-							tr
-								td Sunset
-								td {{weather.sys.sunset * 1000| date:'h:mm a'}}
+								td {{weather.wind.speed}} mph {{weather.wind.direction | windDirection}}
 							tr
 								td Last Update
-								td {{weather.dt * 1000| date:'h:mm a'}}
+								td {{weather.lastBuildDate| date:'h:mm a'}}
 
 
 
