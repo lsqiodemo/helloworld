@@ -39,15 +39,15 @@ html
 				h1 Weather
 
 				div.well
-					form.form-inline
+					form.form-horizontal
 						div.input-group
-							label City
+							span.input-group-addon City
 							input.form-control(type="text", ng-model="city")
 						div.input-group
-							label State
+							span.input-group-addon State
 							input.form-control(type="text", ng-model="state")
 
-						button.button(ng-click="getWeather()") Get Weather
+						button.btn.btn-primary(ng-click="getWeather()") Get Weather
 
 				div.well(ng-show="weather")
 					p {{weather.item.title}}
