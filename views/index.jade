@@ -38,12 +38,9 @@ html
 
 				div.well
 					h1 Weather
-					h3 {{weather.item.title}}
-					table.geolocation-table
+					p {{weather.item.title}}
+					table.weather-table
 						tbody
-							tr
-								td Station
-								td {{weather.location.city}}, {{weather.location.region}}
 							tr
 								td Conditions
 								td {{weather.item.condition.text}}
@@ -53,6 +50,9 @@ html
 							tr
 								td Wind
 								td {{weather.wind.speed}} mph {{weather.wind.direction | windDirection}}
+							tr
+								td Station
+								td {{weather.location.city}}, {{weather.location.region}}
 							tr
 								td Last Update
 								td {{weather.lastBuildDate| date:'h:mm a'}}
