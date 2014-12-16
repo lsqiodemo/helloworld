@@ -2,6 +2,8 @@
 <div ng-controller="ClientsController">
     <h1>Clients</h1>
     <button class="btn btn-primary" ng-click="getClients()">Get Clients</button>
+    <br>
+
     <div ng-show="showLoader" class="loader"></div>
 
     <div class="well" ng-repeat="client in clients">
@@ -10,15 +12,15 @@
             <tbody>
                 <tr>
                     <td>IP</td>
-                    <td>{{client.ip}}</td>
+                    <td>{{client.ip[0]}}</td>
                 </tr>
                 <tr>
-                    <td>Last Update</td>
-                    <td>{{client.states.lastUpdate | date:'longDate'}}</td>
+                    <td>Last Updated</td>
+                    <td>{{client.states.lastUpdated | date:'medium'}}</td>
                 </tr>
                 <tr>
                     <td>Expires</td>
-                    <td>{{client.expire | date:'longDate'}}</td>
+                    <td>{{client.expire | date:'medium'}}</td>
                 </tr>
             </tbody>
         </table>
