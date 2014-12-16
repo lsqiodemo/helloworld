@@ -1,7 +1,7 @@
 // declare a module
 angular.module('AngularTestApp', ['ngRoute'])
 
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'js/weather/weather.html'
@@ -15,5 +15,9 @@ angular.module('AngularTestApp', ['ngRoute'])
       .otherwise({
         redirectTo: '/'
       });
+
+    $locationProvider
+      .html5Mode(true);
+
   }]);
 

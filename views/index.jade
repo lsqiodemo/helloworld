@@ -20,18 +20,18 @@ html
 				.collapse.navbar-collapse
 					ul.nav.navbar-nav
 						li.active
-							a(href='#') Home
+							a(href='/weather') Weather
 						li
-							a(href='/posts') Blog Posts
-						if user
-							li
-								a(href='create') create
-						
+							a(href='/clients') Clients
+						//if user
+						//	li
+						//		a(href='create') create
+
 					ul.nav.navbar-nav.navbar-right
 						li
 							if user
-								a(href='/auth/logout') 
-									| #{user.title}	
+								a(href='/auth/logout')
+									| #{user.title}
 									img(src="#{user.photo}")
 							else
 								a(href='/auth/facebook') Login
