@@ -20,6 +20,7 @@ angular.module('AngularTestApp')
       ,"show":true
     };
 
+
     this.getCollection = function(collectionName){
 
       this.lsqObject.request = "read";
@@ -28,5 +29,19 @@ angular.module('AngularTestApp')
 
     };
 
+    this.deleteCollectionItem = function(collectionName, id){
+
+      this.lsqObject.request = "delete";
+
+      this.lsqObject.query = {
+        "_id": id
+      };
+
+      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
+
+    };
+
     return this;
   });
+
+

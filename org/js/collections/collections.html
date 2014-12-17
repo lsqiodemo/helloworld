@@ -9,9 +9,9 @@
     <form>
         <div class="form-group">
             <label>Collection name</label>
-            <input type="text" class="form-control" ng-model="name">
+            <input type="text" class="form-control" ng-model="searchName">
         </div>
-        <button class="btn btn-primary" ng-click="getCollection(name)">Get Collection</button>
+        <button class="btn btn-primary" ng-click="getCollection(searchName)">Get Collection</button>
     </form>
 
 
@@ -19,12 +19,12 @@
     <hr>
     <div ng-show="showLoader" class="loader"></div>
 
-    <div class="alert-info" ng-show="error">
+    <div class="well alert-info" ng-show="error">
         <h4>{{error.name}}</h4>
         <p>{{error.message}}</p>
     </div>
 
-    <h3 ng-show="collection.length">Collection: {{name}}, results: {{collection.length}}</h3>
+    <h3 ng-show="collection">Collection: {{resultName}}, results: {{collection.length}}</h3>
     <div class="well" ng-repeat="item in collection">
         <pre>
             <code>

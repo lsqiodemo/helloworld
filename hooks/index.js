@@ -12,7 +12,7 @@
 		events();
 	};
 
-	exports.indexRoutes = ["/weather"];
+	exports.indexRoutes = ["/"];
 
 	exports.pageData = function(page,session,callback,host,req,res){
 		var view = 'index';
