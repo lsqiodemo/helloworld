@@ -38,7 +38,7 @@ angular.module("AngularTestApp")
       lsqService.addCollectionItem(collectionName, body)
         .success(function(result){
           $scope.showLoader = false;
-          $scope.resultName = name;
+          $scope.resultName = collectionName;
           $scope.collection = result.result;
         })
         .error(function(result){
@@ -49,12 +49,12 @@ angular.module("AngularTestApp")
     };
 
 
-    $scope.removeItem = function(name, id){
+    $scope.removeItem = function(collectionName, id){
       $scope.showLoader = true;
       $scope.collection = null;
       $scope.error = null;
 
-      lsqService.deleteCollectionItem(name, id)
+      lsqService.deleteCollectionItem(collectionName, id)
         .success(function(result){
           $scope.showLoader = false;
           $scope.resultName = name;
