@@ -3,16 +3,18 @@
 
 
 angular.module('AngularTestApp')
-  .service('lsqService', function ($http) {
+  .factory('lsqService', function ($http) {
+
+    var publicMethods = {};
 
 
-    this.config = {
+    var config = {
       headers: {
         "Content-Type": "application/json"
       }
     };
 
-    this.lsqObject = {
+    var lsqObject_blank = {
       "token" : "IYFYstLbqGfJe8uyTDYn"
       ,"request": ""
       ,"query": {}
@@ -20,39 +22,53 @@ angular.module('AngularTestApp')
       ,"show":true
     };
 
-
-    this.getCollection = function(collectionName){
-
-      this.lsqObject.request = "read";
-
-      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
-
-    };
-
-    this.addCollectionItem = function(collectionName, body){
-
-      this.lsqObject.request = "create";
-
-      this.lsqObject.model = body;
-
-      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
-
+    var sendRequest = function(collectionName, requestObject){
+      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, requestObject, config)
     };
 
 
-    this.deleteCollectionItem = function(collectionName, id){
+    publicMethods.getCollection = function(collectionName){
 
-      this.lsqObject.request = "delete";
+      //copy blank and set method
+      var requestObject = angular.copy(lsqObject_blank);
+      requestObject.request = "read";
 
-      this.lsqObject.query = {
+      return sendRequest(collectionName, requestObject)
+    };
+
+    publicMethods.addCollectionItem = function(collectionName, body){
+
+      //copy blank and set method
+      var requestObject = angular.copy(lsqObject_blank);
+      requestObject.request = "create";
+
+      //set item body
+      requestObject.model = body;
+
+
+      return sendRequest(collectionName, requestObject);
+      //return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
+
+    };
+
+
+    publicMethods.deleteCollectionItem = function(collectionName, id){
+
+      //copy blank and set method
+      var requestObject = angular.copy(lsqObject_blank);
+      requestObject.request = "delete";
+
+      //set query
+      requestObject.query = {
         "_id": id
       };
 
-      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
+      return sendRequest(collectionName, requestObject);
+      //return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
 
     };
 
-    return this;
+    return publicMethods;
   });
 
 
