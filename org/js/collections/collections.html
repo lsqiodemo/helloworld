@@ -28,7 +28,7 @@
     <button class="btn btn-primary" ng-click="addItem(resultName, testBody)">Add Item</button>
 
     <div class="well" ng-repeat="item in collection">
-        <button class="btn btn-danger pull-right" ng-click="removeItem({{item._id}})">Remove Item</button>
+        <button class="btn btn-danger pull-right" ng-click="removeItem(item._id)">Remove Item</button>
         <pre>
             <code>
                 {{item | json}}
