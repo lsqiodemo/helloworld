@@ -24,8 +24,11 @@
         <p>{{error.message}}</p>
     </div>
 
-    <h3 ng-show="collection">Collection: {{resultName}}, results: {{collection.length}}</h3>
+    <h4 ng-show="recordsFound">Collection: {{resultName}}, results: {{collection.length}}</h4>
+    <button class="btn btn-primary" ng-click="addItem(resultName, testBody)">Add Item</button>
+
     <div class="well" ng-repeat="item in collection">
+        <button class="btn btn-danger pull-right" ng-click="removeItem({{item._id}})">Remove Item</button>
         <pre>
             <code>
                 {{item | json}}

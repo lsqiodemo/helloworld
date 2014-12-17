@@ -29,6 +29,17 @@ angular.module('AngularTestApp')
 
     };
 
+    this.addCollectionItem = function(collectionName, body){
+
+      this.lsqObject.request = "create";
+
+      this.lsqObject.model = body;
+
+      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
+
+    };
+
+
     this.deleteCollectionItem = function(collectionName, id){
 
       this.lsqObject.request = "delete";
