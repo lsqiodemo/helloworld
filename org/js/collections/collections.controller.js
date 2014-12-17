@@ -7,8 +7,12 @@ angular.module("AngularTestApp")
     $scope.error = null;
 
     $scope.testBody = {
-      name: "Hello",
-      age: "Kitty"
+      group: "Hello",
+      body: {
+        name: "Matt",
+        age: 30,
+        city: "Boise"
+      }
     };
 
     $scope.getCollection = function(name){
@@ -61,7 +65,7 @@ angular.module("AngularTestApp")
 
           //splice out deleted item
           angular.forEach($scope.collection, function(item, index){
-            if(item._id = result._id){
+            if(item._id == result._id){
               $scope.collection.splice(index, 1);
             }
           });
