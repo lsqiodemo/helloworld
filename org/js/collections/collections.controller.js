@@ -8,9 +8,12 @@ angular.module("AngularTestApp")
       $scope.showLoader = true;
 
       lsqService.getCollection(name)
-        .then(function(result){
+        .success(function(result){
           $scope.showLoader = false;
-          $scope.collection = result.data.result;
+          $scope.collection = result.result;
+        })
+        .error(function(result){
+          $scope.error = result.error;
         });
 
     };

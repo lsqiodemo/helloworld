@@ -19,8 +19,8 @@
     <hr>
     <div ng-show="showLoader" class="loader"></div>
 
-    <div class="panel-info" ng-show="collection && collection.length == 0">
-        No items found
+    <div class="panel-info" ng-show="error">
+        <h4>Error: {{error.name}}: {{error.message}}</h4>
     </div>
 
     <div class="well" ng-repeat="item in collection">
