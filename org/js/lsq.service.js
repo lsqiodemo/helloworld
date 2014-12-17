@@ -45,10 +45,7 @@ angular.module('AngularTestApp')
       //set item body
       requestObject.model = body;
 
-
       return sendRequest(collectionName, requestObject);
-      //return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
-
     };
 
 
@@ -64,8 +61,6 @@ angular.module('AngularTestApp')
       };
 
       return sendRequest(collectionName, requestObject);
-      //return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, this.lsqObject, this.config)
-
     };
 
     return publicMethods;
