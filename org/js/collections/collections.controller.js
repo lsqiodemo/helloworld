@@ -32,14 +32,13 @@ angular.module("AngularTestApp")
 
     $scope.addItem = function(collectionName, body){
       $scope.showLoader = true;
-      $scope.collection = null;
       $scope.error = null;
 
       lsqService.addCollectionItem(collectionName, body)
         .success(function(result){
           $scope.showLoader = false;
           $scope.resultName = collectionName;
-          $scope.collection = result.result;
+          $scope.collection.push(result.result);
         })
         .error(function(result){
           $scope.showLoader = false;
