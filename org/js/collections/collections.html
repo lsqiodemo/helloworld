@@ -24,6 +24,7 @@
         <p>{{error.message}}</p>
     </div>
 
+    <h3 ng-show="collection.length">Collection: {{name}}, results: {{collection.length}}</h3>
     <div class="well" ng-repeat="item in collection">
         <pre>
             <code>

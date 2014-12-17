@@ -7,6 +7,7 @@ angular.module("AngularTestApp")
     $scope.getCollection = function(name){
       $scope.showLoader = true;
       $scope.collection = null;
+      $scope.error = null;
 
       lsqService.getCollection(name)
         .success(function(result){
