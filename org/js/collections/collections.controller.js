@@ -15,21 +15,21 @@ angular.module("AngularTestApp")
       }
     };
 
-    $scope.getCollection = function(name){
+    $scope.getCollection = function(collectionName){
       $scope.showLoader = true;
       $scope.error = null;
       $scope.collection = null;
 
-      lsqService.getCollection(name)
-        .success(function(result){
+      lsqService.getCollection(collectionName)
+        .success(function(response){
           $scope.showLoader = false;
-          $scope.resultName = name;
-          $scope.collection = result.result;
+          $scope.responseName = collectionName;
+          $scope.collection = response.result;
           $scope.recordsFound = $scope.collection.length > 0;
         })
-        .error(function(result){
+        .error(function(response){
           $scope.showLoader = false;
-          $scope.error = result.error;
+          $scope.error = response.error;
         });
 
     };
@@ -39,16 +39,16 @@ angular.module("AngularTestApp")
       $scope.error = null;
 
       lsqService.addCollectionItem(collectionName, body)
-        .success(function(result){
+        .success(function(response){
           $scope.showLoader = false;
           $scope.resultName = collectionName;
 
           //push in new item
-          $scope.collection.push(result.result);
+          $scope.collection.push(response.response);
         })
-        .error(function(result){
+        .error(function(response){
           $scope.showLoader = false;
-          $scope.error = result.error;
+          $scope.error = response.error;
         });
 
     };
@@ -59,20 +59,20 @@ angular.module("AngularTestApp")
       $scope.error = null;
 
       lsqService.deleteCollectionItem(collectionName, id)
-        .success(function(result){
+        .success(function(response){
           $scope.showLoader = false;
           $scope.resultName = collectionName;
 
           //splice out deleted item
           angular.forEach($scope.collection, function(item, index){
-            if(item._id == result._id){
+            if(item._id == response.result._id){
               $scope.collection.splice(index, 1);
             }
           });
         })
-        .error(function(result){
+        .error(function(response){
           $scope.showLoader = false;
-          $scope.error = result.error;
+          $scope.error = response.error;
         });
 
     };
