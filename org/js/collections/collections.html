@@ -5,13 +5,23 @@
     <div>
 
     </div>
-    <button class="btn btn-primary" ng-click="getCollection(name)">Get Collection</button>
 
-    <input type="text" class="form-control" ng-model="name">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Collection name</label>
+            <input type="text" class="form-control" ng-model="name">
+        </div>
+        <button class="btn btn-primary" ng-click="getCollection(name)">Get Collection</button>
+    </form>
+
 
     <br>
     <hr>
     <div ng-show="showLoader" class="loader"></div>
+
+    <div class="panel-info" ng-show="collection && collection.length == 0">
+        No items found
+    </div>
 
     <div class="well" ng-repeat="item in collection">
         <pre>
