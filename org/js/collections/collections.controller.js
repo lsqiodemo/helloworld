@@ -13,6 +13,7 @@ angular.module("AngularTestApp")
           $scope.collection = result.result;
         })
         .error(function(result){
+          $scope.showLoader = false;
           $scope.error = result.error;
         });
 
