@@ -15,6 +15,9 @@ angular.module('AngularTestApp', ['ngRoute', 'ngAnimate'])
       .when('/events', {
         templateUrl: 'js/events/events.html'
       })
+      .when('/collections', {
+        templateUrl: 'js/collections/collections.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

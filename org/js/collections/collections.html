@@ -1,0 +1,24 @@
+
+<div ng-controller="CollectionsController">
+
+    <h1>Collections</h1>
+    <div>
+
+    </div>
+    <button class="btn btn-primary" ng-click="getCollection(name)">Get Collection</button>
+
+    <input type="text" class="form-control" ng-model="name">
+
+    <br>
+    <hr>
+    <div ng-show="showLoader" class="loader"></div>
+
+    <div class="well" ng-repeat="item in collection">
+        <pre>
+            <code>
+                {{item | json}}
+            </code>
+        </pre>
+    </div>
+
+</div>
