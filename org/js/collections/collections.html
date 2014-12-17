@@ -6,7 +6,7 @@
 
     </div>
 
-    <form class="form-inline">
+    <form>
         <div class="form-group">
             <label>Collection name</label>
             <input type="text" class="form-control" ng-model="name">
@@ -19,8 +19,9 @@
     <hr>
     <div ng-show="showLoader" class="loader"></div>
 
-    <div class="panel-info" ng-show="error">
-        <h4>Error: {{error.name}}: {{error.message}}</h4>
+    <div class="alert-info" ng-show="error">
+        <h4>{{error.name}}</h4>
+        <p>{{error.message}}</p>
     </div>
 
     <div class="well" ng-repeat="item in collection">
