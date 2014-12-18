@@ -2,33 +2,31 @@
 <div ng-controller="CollectionsController">
 
     <h1>Collections</h1>
-    <div>
 
-    </div>
-
+    <!--search collection-->
     <form>
         <div class="form-group">
-            <label>Collection name</label>
-            <input type="text" class="form-control" ng-model="searchName">
+            <label for="collection_name">Collection name</label>
+            <input type="text" name="collection_name" id="collection_name" class="form-control" ng-model="searchName">
         </div>
         <button class="btn btn-primary" ng-click="getCollection(searchName)">Get Collection</button>
     </form>
-
-
-    <br>
     <hr>
+
+    <!--spinner-->
     <div ng-show="showLoader" class="loader"></div>
 
+    <!--error-->
     <div class="well alert-info" ng-show="error">
         <h4>{{error.name}}</h4>
         <p>{{error.message}}</p>
     </div>
 
-
-    <button class="btn btn-primary pull-right" ng-click="addItem(resultName, testBody)">Add Item</button>
-
+    <!--item list header-->
     <h4 ng-show="recordsFound">Collection: {{resultName}}, results: {{collection.length}}</h4>
+    <button class="btn btn-primary" ng-show="recordsFound" ng-click="addItem(resultName, testBody)">Add Item</button>
 
+    <!--item list-->
     <div class="well" ng-repeat="item in collection">
         <button class="btn btn-danger pull-right" ng-click="removeItem(resultName, item._id)">Remove Item</button>
         <pre>
