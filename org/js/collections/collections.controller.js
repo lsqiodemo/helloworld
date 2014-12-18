@@ -23,7 +23,7 @@ angular.module("AngularTestApp")
       lsqService.getCollection(collectionName)
         .success(function(response){
           $scope.showLoader = false;
-          $scope.responseName = collectionName;
+          $scope.resultName = collectionName;
           $scope.collection = response.result;
           $scope.recordsFound = $scope.collection.length > 0;
         })
