@@ -17,6 +17,7 @@ angular.module("AngularTestApp")
 
     $scope.getCollection = function(collectionName){
       $scope.showLoader = true;
+      $scope.recordsFound = false;
       $scope.error = null;
       $scope.collection = null;
 
