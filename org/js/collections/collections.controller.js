@@ -45,7 +45,7 @@ angular.module("AngularTestApp")
           $scope.resultName = collectionName;
 
           //push in new item
-          $scope.collection.push(response.response);
+          $scope.collection.push(response.result);
         })
         .error(function(response){
           $scope.showLoader = false;

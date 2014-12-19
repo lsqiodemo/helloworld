@@ -22,8 +22,5 @@ angular.module('AngularTestApp', ['ngRoute', 'ngAnimate'])
         redirectTo: '/'
       });
 
-    $locationProvider
-      .html5Mode(true);
-
   }]);
 

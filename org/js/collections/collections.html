@@ -1,15 +1,21 @@
 
 <div ng-controller="CollectionsController">
 
-    <h1>Collections</h1>
+    <h1>Manage Collections</h1>
 
     <!--search collection-->
     <form>
         <div class="form-group">
-            <label for="collection_name">Collection name</label>
-            <input type="text" name="collection_name" id="collection_name" class="form-control" ng-model="searchName">
+            <div class="input-group">
+                <span class="input-group-addon" for="collection_name">Enter collection name:</span>
+                <input type="text" name="collection_name" id="collection_name" class="form-control" ng-model="searchName">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="getCollection(searchName)">Search</button>
+                </span>
+
+            </div>
         </div>
-        <button class="btn btn-primary" ng-click="getCollection(searchName)">Get Collection</button>
+
     </form>
     <hr>
 
@@ -24,11 +30,11 @@
 
     <!--item list header-->
     <h4 ng-show="recordsFound">Collection: {{resultName}}, results: {{collection.length}}</h4>
-    <button class="btn btn-primary" ng-show="recordsFound" ng-click="addItem(resultName, testBody)">Add Item</button>
+    <button class="btn btn-primary" ng-show="recordsFound" ng-click="addItem(resultName, testBody)">Add {{resultName}}</button>
 
     <!--item list-->
-    <div class="well" ng-repeat="item in collection">
-        <button class="btn btn-danger pull-right" ng-click="removeItem(resultName, item._id)">Remove Item</button>
+    <div class="well" ng-repeat="item in collection track by item._id">
+        <button class="btn btn-danger pull-right" ng-click="removeItem(resultName, item._id)">Remove</button>
         <pre>
             <code>
                 {{item | json}}

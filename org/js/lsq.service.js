@@ -23,7 +23,7 @@ angular.module('AngularTestApp')
     };
 
     var sendRequest = function(collectionName, requestObject){
-      return $http.post('https://helloworld.lsq.io/api/v1/' + collectionName, requestObject, config)
+      return $http.post('/api/v1/' + collectionName, requestObject, config)
     };
 
 
