@@ -7,60 +7,40 @@ angular.module('AngularTestApp')
 
     var publicMethods = {};
 
-
     var config = {
       headers: {
         "Content-Type": "application/json"
       }
     };
 
-    var lsqObject_blank = {
-      "token" : "IYFYstLbqGfJe8uyTDYn"
-      ,"request": ""
-      ,"query": {}
-      ,"select":{}
-      ,"show":true
-    };
+    var sendRequest = function(collectionName, requestType, query, model, select){
 
-    var sendRequest = function(collectionName, requestObject){
+      var requestObject = {
+        "token" : "IYFYstLbqGfJe8uyTDYn"
+        ,"request": requestType
+        ,"query": query
+        ,"model": model
+        ,"select": select
+        ,"show":true
+      };
+
       return $http.post('/api/v1/' + collectionName, requestObject, config)
     };
 
 
     publicMethods.getCollection = function(collectionName){
 
-      //copy blank and set method
-      var requestObject = angular.copy(lsqObject_blank);
-      requestObject.request = "read";
-
-      return sendRequest(collectionName, requestObject)
+      return sendRequest(collectionName, "read")
     };
 
     publicMethods.addCollectionItem = function(collectionName, body){
 
-      //copy blank and set method
-      var requestObject = angular.copy(lsqObject_blank);
-      requestObject.request = "create";
-
-      //set item body
-      requestObject.model = body;
-
-      return sendRequest(collectionName, requestObject);
+      return sendRequest(collectionName, "create", {}, body);
     };
-
 
     publicMethods.deleteCollectionItem = function(collectionName, id){
 
-      //copy blank and set method
-      var requestObject = angular.copy(lsqObject_blank);
-      requestObject.request = "delete";
-
-      //set query
-      requestObject.query = {
-        "_id": id
-      };
-
-      return sendRequest(collectionName, requestObject);
+      return sendRequest(collectionName, "delete", { "_id": id });
     };
 
     return publicMethods;
