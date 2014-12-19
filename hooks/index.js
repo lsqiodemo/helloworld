@@ -94,10 +94,9 @@
     db.onEvent("test2",function(req,res){
 
       db.read("event",{},{one:false},function(err,data){
-        if(err){res.status(500).send("err: " + err);}
+        if(err){res.status(500).send(err);}
 
         res.send("test two - event count: " + data.length);
-
       });
 
     });
