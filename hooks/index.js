@@ -92,7 +92,7 @@
 
 //      var name = req.body.name || "fail";
 
-      res.send("test one complete: " + req.body)
+      res.send("test one complete: " + req.body.toJSON)
     })
 
 	};
