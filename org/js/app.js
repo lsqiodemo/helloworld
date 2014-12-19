@@ -1,22 +1,16 @@
 // declare a module
 angular.module('AngularTestApp', ['ngRoute', 'ngAnimate'])
 
-  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'js/clients/clients.html'
-      })
-      .when('/clients', {
-        templateUrl: 'js/clients/clients.html'
-      })
-      .when('/schemas', {
-        templateUrl: 'js/schemas/schemas.html'
-      })
-      .when('/events', {
-        templateUrl: 'js/events/events.html'
+        templateUrl: 'js/collections/collections.html'
       })
       .when('/collections', {
         templateUrl: 'js/collections/collections.html'
+      })
+      .when('/events', {
+        templateUrl: 'js/events/events.html'
       })
       .otherwise({
         redirectTo: '/'

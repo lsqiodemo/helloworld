@@ -23,21 +23,6 @@
 				view = 'index';
 				sendPage();
 				break;
-//			case "/posts":
-//				view = 'posts';
-//				db.read("item",{"group":"blog"},{limit:20,sort:"-date"},function(error,posts){
-//					json.posts = posts;
-//					sendPage();
-//				});
-//				break;
-//      case "/schemas":
-//        view = "schemaList";
-//        sendPage();
-//        break;
-//      case "/create":
-//				view = "create";
-//				sendPage();
-//				break;
 			default:
 			 	view = 'index';
 			 	sendPage();
@@ -55,48 +40,60 @@
 	
 	exports.routes = function(app){
 
-
 		app.get("/api/v1/users",function(req,res){
 			users.login(req.session,function(json){
 				res.send(json)
 			})
 		});
 
-		app.post("/post/new",function(req,res){
-			if(!_.has(req.session,"p")) return res.redirect("/")
-			if(!req.body.title) return res.redirect("/create")
-			if(!req.body.text) return res.redirect("/create")
 
-			var json = {};
-			json.group = "blog";
-			json.title = req.body.title;
-			json.body = {};
-			json.body.text = req.body.text;
-			db.read("profile",{"_id":req.session.p},{one:true},function(e,d){
-				json.body.author = {"_id":req.session.p
-									,"title":d.title
-									,"photo":d.photo};
-				db.create("item",json,function(error,data){
-					if(error)
-						return res.redirect("/create")
-					res.redirect("/posts")
-				})
-			})
-		});
 
-		app.get("/post/delete/:id",function(req,res){
-			if(!_.has(req.session,"p")) return res.redirect("/")
-			db.delete("item",{"_id":req.params.id,"body.author._id":req.session.p},function(error,data){
-				res.redirect("/posts")
-			})
-		})
+
+//
+//		app.post("/post/new",function(req,res){
+//			if(!_.has(req.session,"p")) return res.redirect("/")
+//			if(!req.body.title) return res.redirect("/create")
+//			if(!req.body.text) return res.redirect("/create")
+//
+//			var json = {};
+//			json.group = "blog";
+//			json.title = req.body.title;
+//			json.body = {};
+//			json.body.text = req.body.text;
+//			db.read("profile",{"_id":req.session.p},{one:true},function(e,d){
+//				json.body.author = {"_id":req.session.p
+//									,"title":d.title
+//									,"photo":d.photo};
+//				db.create("item",json,function(error,data){
+//					if(error)
+//						return res.redirect("/create")
+//					res.redirect("/posts")
+//				})
+//			})
+//		});
+//
+//		app.get("/post/delete/:id",function(req,res){
+//			if(!_.has(req.session,"p")) return res.redirect("/")
+//			db.delete("item",{"_id":req.params.id,"body.author._id":req.session.p},function(error,data){
+//				res.redirect("/posts")
+//			})
+//		})
 
 	return app;
 	}
 
   var events = function(){
 
-	}
+    db.onEvent("userInvite",function(req,res){
+
+      //sendEmail(req.body.email, req.body.user +" would like to invite you to " + req.body.company);
+      //res.status(200)
+      //res.send(200,"email sent")
+
+      res.send("email sent")
+    })
+
+	};
 
 return exports;
 })(exports)
