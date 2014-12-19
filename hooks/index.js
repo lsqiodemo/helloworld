@@ -96,7 +96,7 @@
       db.read("event",{},{one:false},function(err,data){
         if(err){res.status(500).send("err: " + err);}
 
-        res.send("test two - event count is: " + data.length());
+        res.send("test two - event count is: " + data);
 
       });
 
