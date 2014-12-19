@@ -80,7 +80,7 @@
 //		})
 
 	return app;
-	}
+	};
 
   var events = function(){
 
@@ -98,4 +98,4 @@
 	};
 
 return exports;
-})(exports)
+})(exports);

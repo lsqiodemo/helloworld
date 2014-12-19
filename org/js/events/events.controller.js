@@ -24,7 +24,7 @@ angular.module("AngularTestApp")
       var event = {
         route: body.route,
         date: runDate,
-        body: body.body
+        body: JSON.parse(body.body)
       };
 
       lsqService.addCollectionItem(collectionName, event)
