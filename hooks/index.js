@@ -90,9 +90,9 @@
       //res.status(200)
       //res.send(200,"email sent")
 
-      var name = req.body.name || "fail";
+//      var name = req.body.name || "fail";
 
-      res.send("test one complete: " + name)
+      res.send("test one complete: " + req.body)
     })
 
 	};

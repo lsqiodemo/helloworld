@@ -16,7 +16,8 @@
             <th>Route</th>
             <th>Body</th>
             <th>Status</th>
-            <th>Remove</th>
+            <th>Response</th>
+            <th>Delete</th>
         </tr>
         <tr ng-repeat="event in events">
             <td>{{event.date | date:"medium"}}</td>
@@ -27,14 +28,11 @@
                 </code>
 
             </td>
-            <td>
-                {{event.statusCode}}
-            </td>
+            <td>{{event.statusCode}}</td>
+            <td>{{event.response}}</td>
 
             <td>
-                <button class="btn btn-danger" data-ng-click="removeItem('event', event._id)">
-                   X
-                </button>
+                <button class="btn btn-danger" data-ng-click="removeItem('event', event._id)">delete</button>
             </td>
 
         </tr>
