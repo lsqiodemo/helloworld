@@ -84,13 +84,15 @@
 
   var events = function(){
 
-    db.onEvent("userInvite",function(req,res){
+    db.onEvent("test1",function(req,res){
 
       //sendEmail(req.body.email, req.body.user +" would like to invite you to " + req.body.company);
       //res.status(200)
       //res.send(200,"email sent")
 
-      res.send("email sent")
+      var name = req.body.name || "fail";
+
+      res.send("test one complete: " + name)
     })
 
 	};

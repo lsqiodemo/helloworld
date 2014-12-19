@@ -2,7 +2,7 @@ angular.module("AngularTestApp")
   .controller('EventsController', function($scope, lsqService) {
 
     $scope.showLoader = false;
-    $scope.clients = null;
+    $scope.events = null;
 
     $scope.getEvents = function(){
       $scope.showLoader = true;
@@ -64,8 +64,6 @@ angular.module("AngularTestApp")
         });
 
     };
-
-
 
     //Init
     $scope.getEvents();
