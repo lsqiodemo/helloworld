@@ -3,17 +3,77 @@
 
 <div ng-controller="EventsController">
 
+
+    <button class="btn btn-primary pull-right" ng-click="getEvents()">Refresh</button>
     <h1>Events</h1>
-    <button class="btn btn-primary" ng-click="getEvents()">Get Events</button>
 
-    <br>
     <hr>
+    <table class="table table-striped">
 
+        <tr>
+
+            <th>Date</th>
+            <th>Route</th>
+            <th>Body</th>
+            <th>Status</th>
+            <th>Remove</th>
+        </tr>
+        <tr ng-repeat="event in events">
+            <td>{{event.date | date:"medium"}}</td>
+            <td>{{event.route}}</td>
+            <td>
+                <code>
+                    {{event.body}}
+                </code>
+
+            </td>
+            <td>
+                {{event.statusCode}}
+            </td>
+
+            <td>
+                <button class="btn btn-danger" data-ng-click="removeItem('event', event._id)">
+                   X
+                </button>
+            </td>
+
+        </tr>
+    </table>
+
+
+    <!--spinner-->
     <div ng-show="showLoader" class="loader"></div>
 
     <div class="well">
 
-    </div>
+        <form role="form" name="New_EventForm" data-ng-submit="submitNew_Event(New_Event)">
 
+            <legend>New Event</legend>
+
+            <div class="form-group">
+                <label class="control-label" for="1">Route</label>
+                <input class="form-control" type="text" id="1" name="1_Text"  placeholder="key for 'onEvent'" required data-ng-model="New_Event.route">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="2">Run Date</label>
+                <input class="form-control" type="date" id="2" name="2_Date" required data-ng-model="New_Event.Run_Date">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="3">Run Time</label>
+                <input class="form-control" type="time" id="3" name="3_Time" data-ng-model="New_Event.Run_Time">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="4">Body</label>
+                <textarea rows="3" class="form-control" id="4" name="4_Text_Area" data-ng-model="New_Event.body"></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit" data-ng-click="addItem('event', New_Event)">Submit</button>
+
+        </form>
+
+    </div>
 
 </div>
