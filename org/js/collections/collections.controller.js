@@ -26,7 +26,7 @@ angular.module("AngularTestApp")
           $scope.showLoader = false;
           $scope.resultName = collectionName;
           $scope.collection = response.result;
-          $scope.recordsFound = $scope.collection.length > 0;
+          $scope.recordsFound = true;
         })
         .error(function(response){
           $scope.showLoader = false;
